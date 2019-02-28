@@ -9,4 +9,7 @@ class Student(persistent.Persistent):
     def getStudentName(self):
         return self.studentName
 
-
+storage = ZODB.FileStorage.FileStorage('mydata.fs')
+db = ZODB.DB(storage)
+connection = db.open()
+root = connection.root
