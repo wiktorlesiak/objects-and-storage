@@ -2,6 +2,8 @@ import ZODB, ZODB.FileStorage
 import persistent
 import transaction
 
+
+
 class Student(persistent.Persistent):
     studentName = ''
     def setStudentName(self, sName):
@@ -9,7 +11,19 @@ class Student(persistent.Persistent):
     def getStudentName(self):
         return self.studentName
 
+
+
 storage = ZODB.FileStorage.FileStorage('mydata.fs')
 db = ZODB.DB(storage)
 connection = db.open()
 root = connection.root
+
+
+
+root.s1 = Student()
+
+# set the data into the node
+root.s1.setStudentName("james")
+
+# save the changes!
+transaction.commit()
