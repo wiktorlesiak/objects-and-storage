@@ -6,16 +6,11 @@ import transaction
 
 class Student(persistent.Persistent):
     studentName = ''
-    secondName = ''
     def setStudentName(self, sName):
         self.studentName = sName
     def getStudentName(self):
         return self.studentName
-
-    def setStudentSecondName(self, s2Name):
-        self.secondName = s2Name
-    def getStudentSecondName(self):
-        return self.secondName     
+        
 
 
 storage = ZODB.FileStorage.FileStorage('mydata.fs')
@@ -30,6 +25,6 @@ root = connection.root
 
 
 print(root.s1.getStudentName())
-print(root.s1.getStudentSecondName())
+
 
 
