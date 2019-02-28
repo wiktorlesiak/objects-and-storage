@@ -1,4 +1,4 @@
-.mydata.fs
-.mydata.fs.index
-.mydata.fs.lock
-.mydata.fs.tmp
+/mydata.fs
+/mydata.fs.index
+/mydata.fs.lock
+/mydata.fs.tmp
