@@ -15,8 +15,7 @@ class Student(persistent.Persistent):
     def setStudentSecondName(self, s2Name):
         self.secondName = s2Name
     def getStudentSecondName(self):
-        return self.secondName 
-
+        return self.secondName     
 
 
 storage = ZODB.FileStorage.FileStorage('mydata.fs')
@@ -24,12 +23,13 @@ db = ZODB.DB(storage)
 connection = db.open()
 root = connection.root
 
+        
+
+# In this example, we are just pulling the record from the database and viewing the name
+# that was stored inside of the s1 object.
 
 
-root.s1 = Student()
+print(root.s1.getStudentName())
+print(root.s1.getStudentSecondName())
 
-# set the data into the node
-root.s1.setStudentName("james")
-root.s1.setStudentSecondNames("aslkdja")
-# save the changes!
-transaction.commit()
+
