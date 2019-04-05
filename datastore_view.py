@@ -1,4 +1,4 @@
-import ZODB, ZODB.FileStorage
+mport ZODB, ZODB.FileStorage
 import persistent
 import transaction
 
@@ -25,6 +25,4 @@ root = connection.root
 
 
 print(root.s1.getStudentName())
-
-
 
